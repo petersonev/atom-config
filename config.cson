@@ -1,0 +1,52 @@
+"*":
+  "exception-reporting":
+    userId: "1dd80d3d-666c-8e0c-6d55-5f9a4e4039cd"
+  welcome:
+    showOnStartup: false
+  editor:
+    fontSize: 13
+    invisibles: {}
+    showIndentGuide: true
+  core:
+    excludeVcsIgnoredPaths: false
+  "one-dark-ui": {}
+  platomformio:
+    environPath: "/opt/theos/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:"
+  build: {}
+  "run-command2": {}
+  "env-from-shell":
+    variables: [
+      "PATH"
+      "THEOS"
+    ]
+    autoRun: true
+  "make-runner": {}
+  script: {}
+  "fuzzy-finder": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "git-plus": {}
+  "editor-settings": {}
+  minimap: {}
+  "file-icons":
+    onChanges: true
+  "terminal-status": {}
+  "browser-plus": {}
+  "run-in-terminal": {}
+  "rubinius-terminal": {}
+  "atom-rubinius-terminal": {}
+  "ult-terminal": {}
+  "atom-karaf-terminal": {}
+  term2:
+    colors:
+      normalBlue:
+        red: 70
+        green: 144
+        blue: 236
+        alpha: 1
+      normalRed:
+        red: 255
+        green: 76
+        blue: 56
+        alpha: 1
+  latex: {}
