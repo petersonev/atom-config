@@ -1,7 +1,7 @@
 {
   "name": "pdf-view",
   "main": "./lib/pdf-editor.coffee",
-  "version": "0.23.0",
+  "version": "0.34.0",
   "description": "Atom PDF viewer based on PDF.js",
   "repository": {
     "type": "git",
@@ -13,20 +13,20 @@
   },
   "dependencies": {
     "fs-plus": "2.x",
-    "pdfjs-dist": "1.1.86",
+    "pdfjs-dist": "1.1.469",
     "underscore-plus": "^1.6",
     "atom-space-pen-views": "^2.0.3"
   },
-  "readme": "# PDF View package\n\nAdds support for viewing PDF files in Atom. Powered by [PDF.js](https://github.com/mozilla/pdf.js)\n\n![](https://cloud.githubusercontent.com/assets/38924/2875460/79a8fc56-d41c-11e3-8f32-31f71a47e0fb.png)\n\n## Features\n\n### Zooming\n\n|            | OSX                | Windows and Linux    |\n|------------|--------------------|----------------------|\n| Zoom in    | `cmd-=` or `cmd-+` | `ctrl-=` or `ctrl-+` |\n| Zoom out   | `cmd--` or `cmd-_` | `ctrl--` or `ctrl-_` |\n| Reset zoom | `cmd-0`            | `ctrl-0`             |\n\n### Status bar information\n\nShows the number of the current page and total page count.\n\n![](https://cloud.githubusercontent.com/assets/38924/3214330/a13c58a2-efac-11e3-85a5-c75f6d654058.png)\n\n### Go to page\n\nJump to a specific page by either clicking on the page count in the status bar or by executing the `Pdf View: Go To Page` command from the command palette.\n\n![](https://cloud.githubusercontent.com/assets/38924/3689767/ce223cce-1342-11e4-8b7b-b2e5bdbb3016.png)\n",
+  "readme": "# PDF View package\n\nAdds support for viewing PDF files in Atom. Powered by [PDF.js](https://github.com/mozilla/pdf.js)\n\n![](https://cloud.githubusercontent.com/assets/38924/2875460/79a8fc56-d41c-11e3-8f32-31f71a47e0fb.png)\n\n## Features\n\n### Zooming\n\n|            | OSX                | Windows and Linux    |\n|------------|--------------------|----------------------|\n| Zoom in    | `cmd-=` or `cmd-+` | `ctrl-=` or `ctrl-+` |\n| Zoom out   | `cmd--` or `cmd-_` | `ctrl--` or `ctrl-_` |\n| Reset zoom | `cmd-0`            | `ctrl-0`             |\n\nYou can also zoom by holding `ctrl` and using the mouse wheel.\n\n### Status bar information\n\nShows the number of the current page and total page count.\n\n![](https://cloud.githubusercontent.com/assets/38924/3214330/a13c58a2-efac-11e3-85a5-c75f6d654058.png)\n\n### Go to page\n\nJump to a specific page by either clicking on the page count in the status bar or by executing the `Pdf View: Go To Page` command from the command palette.\n\n![](https://cloud.githubusercontent.com/assets/38924/3689767/ce223cce-1342-11e4-8b7b-b2e5bdbb3016.png)\n\n### SyncTeX\n\nFor PDF files created by TeX using the `--synctex=1` option, a click on the PDF\nwill take you to the corresponding source code. If the `synctex` command (part\nof modern TeX distributions) is in your PATH, this will work out of the box,\notherwise you can configure the path to the `synctex` binary in the settings.\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/izuzak/atom-pdf-view/issues"
   },
   "homepage": "https://github.com/izuzak/atom-pdf-view#readme",
-  "_id": "pdf-view@0.23.0",
-  "_shasum": "9fe9e4da54f9700146a3fd4f33979451e823d77a",
-  "_resolved": "file:../d-11582-9473-15bh0rt/package.tgz",
-  "_from": "../d-11582-9473-15bh0rt/package.tgz",
+  "_id": "pdf-view@0.34.0",
+  "_shasum": "5635991e22f4d212b3c09ff833201f96ec1fbfd7",
+  "_resolved": "file:../d-115919-1351-1ul7snb/package.tgz",
+  "_from": "../d-115919-1351-1ul7snb/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -47,7 +47,7 @@
       },
       {
         "name": "grim",
-        "version": "1.4.2",
+        "version": "1.5.0",
         "path": "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/lib/grim.js"
       },
       {
@@ -67,8 +67,18 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.7",
+        "version": "0.10.8",
         "path": "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/index.js"
+      },
+      {
+        "name": "es6-iterator",
+        "version": "2.0.0",
+        "path": "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/index.js"
+      },
+      {
+        "name": "es6-symbol",
+        "version": "3.0.0",
+        "path": "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/index.js"
       },
       {
         "name": "es6-iterator",
@@ -368,6 +378,21 @@
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/math/trunc/index.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/math/trunc/is-implemented.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/math/trunc/shim.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/#/chain.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/array.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/for-of.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/get.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/index.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/is-iterable.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/string.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/valid-iterable.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/implement.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/index.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/is-implemented.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/is-native-implemented.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/is-symbol.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/polyfill.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/validate-symbol.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/#/index.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/#/pad.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/epsilon/implement.js",
@@ -386,6 +411,7 @@
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-nan/index.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-nan/is-implemented.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-nan/shim.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-natural.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-number.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-safe-integer/implement.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/number/is-safe-integer/index.js",
@@ -415,6 +441,8 @@
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/eq.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/every.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/filter.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/find-key.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/find.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/first-key.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/flatten.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/for-each.js",
@@ -522,6 +550,7 @@
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/#/starts-with/index.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/#/starts-with/is-implemented.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/#/starts-with/shim.js",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/#/uncapitalize.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/format-method.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/from-code-point/implement.js",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/string/from-code-point/index.js",
@@ -657,6 +686,8 @@
         "node_modules/atom-space-pen-views/node_modules/fuzzaldrin/package.json",
         "node_modules/atom-space-pen-views/node_modules/space-pen/api.json",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/d/package.json",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/package.json",
+        "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/package.json",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/package.json",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator/package.json",
         "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol/package.json",
@@ -689,7 +720,7 @@
         ],
         "dependencies": {
           "fs-plus": "2.x",
-          "pdfjs-dist": "1.1.86",
+          "pdfjs-dist": "1.1.469",
           "underscore-plus": "^1.6",
           "atom-space-pen-views": "^2.0.3"
         }
@@ -913,8 +944,31 @@
           "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/test/string/raw"
         ],
         "dependencies": {
-          "es6-iterator": "~0.1.3",
-          "es6-symbol": "~2.0.1"
+          "es6-iterator": "2",
+          "es6-symbol": "3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/#",
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator",
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/test/#",
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator/test"
+        ],
+        "dependencies": {
+          "d": "^0.1.1",
+          "es5-ext": "^0.10.7",
+          "es6-symbol": "3"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol",
+          "node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/test"
+        ],
+        "dependencies": {
+          "d": "~0.1.1",
+          "es5-ext": "~0.10.7"
         }
       },
       {

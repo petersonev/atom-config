@@ -1,0 +1,95 @@
+{
+  "name": "linter-gcc",
+  "main": "./lib/main",
+  "version": "0.3.8",
+  "description": "Lint C and C++ source files using gcc / g++",
+  "keywords": [
+    "lint",
+    "linter",
+    "c",
+    "c++",
+    "gcc",
+    "g++",
+    "error"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebaishi/linter-gcc.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "latest"
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "globals": {
+      "atom": true
+    }
+  },
+  "readme": "# linter-gcc package\n\nLinter plugin for [Linter](https://github.com/AtomLinter/Linter), provides an interface to gcc/g++.\n\nUsed with files with grammar \"C\" and \"C++\".\n\nClone of [linter-clang](https://github.com/AtomLinter/linter-clang) by [Kepler](https://github.com/k2b6s9j).\n\n## Screenshot\n\n![linter-gcc screenshot](https://github.com/hebaishi/images/blob/master/lintergcc-screenshot.png?raw=true)\n\n## Project-Specific settings\n\nJust place a file called ```.gcc-flags.json``` in your project root, with the following content:\n\n```json\n{\n  \"execPath\": \"/usr/bin/g++\",\n  \"gccDefaultCFlags\": \"-Wall\",\n  \"gccDefaultCppFlags\": \"-Wall -std=c++11\",\n  \"gccErrorLimit\": 15,\n  \"gccIncludePaths\": \".,./include,./path\",\n  \"gccSuppressWarnings\": true\n}\n```\nNote that the include paths need to be separated by commas. If this file is present, it will replace the settings you specified in the settings window. Relative paths (starting with ```.``` or ```..```) are expanded with respect to the root folder. Both ```execPath``` and ```gccIncludePaths``` are expanded.\n\nIf you have atleast one project open, the root folder will the root folder of the first (top) project. Otherwise, the path to the current file is taken as the root.\n\n### Plugin installation\nPress ctrl and ',' or cmd and ',' , click on 'Packages', search 'linter gcc', or:\n```\n$ apm install linter-gcc\n```\n### Debugging\nExecutable path and all arguments are written to the console on file save, so just open the console to see the values of these parameters.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/hebaishi/linter-gcc/issues"
+  },
+  "homepage": "https://github.com/hebaishi/linter-gcc#readme",
+  "_id": "linter-gcc@0.3.8",
+  "_shasum": "a5f9641d2389c3407211d71d3012bc46471bebcc",
+  "_resolved": "file:../d-115821-9648-1dd4guj/package.tgz",
+  "_from": "../d-115821-9648-1dd4guj/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "xregexp",
+        "version": "2.0.0",
+        "path": "node_modules/atom-linter/node_modules/xregexp/xregexp-all.js"
+      }
+    ],
+    "extensions": {
+      ".js": [
+        "lib/config.js",
+        "lib/main.js",
+        "node_modules/atom-linter/node_modules/xregexp/xregexp-all.js"
+      ],
+      ".coffee": [
+        "node_modules/atom-linter/lib/helpers.coffee"
+      ],
+      ".json": [
+        "node_modules/atom-linter/node_modules/xregexp/package.json",
+        "node_modules/atom-linter/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          ""
+        ],
+        "dependencies": {
+          "atom-linter": "^2.0.5"
+        }
+      }
+    ]
+  }
+}

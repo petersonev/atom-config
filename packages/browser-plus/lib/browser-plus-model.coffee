@@ -23,6 +23,9 @@ module.exports =
     getTitle: ->
       @title or path.basename(@uri)
 
+    getIconName: ->
+      @iconName
+
     getURI: ->
       if @src?.includes('data:text/html,')
         # regex = new RegExp("<bp-uri>([\\s\\S]*?)</bp-uri>")
@@ -39,3 +42,6 @@ module.exports =
 
     setTitle: (@title)->
       @emit 'title-changed'
+
+    updateIcon: ->
+      @emit 'icon-changed'

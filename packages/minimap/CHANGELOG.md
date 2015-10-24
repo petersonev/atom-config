@@ -1,3 +1,37 @@
+<a name="v4.15.0"></a>
+# v4.15.0 (2015-10-22)
+
+## :sparkles: Features
+
+- Implement a new adapter layer to handle differences between stable and beta ([0d93666e](https://github.com/atom-minimap/minimap/commit/0d93666eea59159047459d246d815b3eb501633d))
+
+
+<a name="v4.14.0"></a>
+# v4.14.0 (2015-10-17)
+
+## :bug: Bug Fixes
+
+- Fix all remaining depracations in specs and element ([a0e418d9](https://github.com/atom-minimap/minimap/commit/a0e418d967ae6d03a8599e570af4195cdcb69eb9))
+- Fix access to private API removed in latest master ([cf37f604](https://github.com/atom-minimap/minimap/commit/cf37f6041c2fb2a303ed43ec426223c2bb2a22a2), [#387](https://github.com/atom-minimap/minimap/issues/387))
+
+## :arrow_up: Dependencies Update
+
+- Bump minimum engine version ([a705ac6c](https://github.com/atom-minimap/minimap/commit/a705ac6cf32829b11c48145085d3396f010dee44))
+
+<a name="v4.13.4"></a>
+# v4.13.4 (2015-09-25)
+
+## :bug: Bug Fixes
+
+- Use provided text editor ([e2883013](https://github.com/atom-minimap/minimap/commit/e2883013edf707205a94b7aabf3f063f7ae42149))
+
+<a name="4.13.3"></a>
+# 4.13.3 (2015-09-08)
+
+## :bug: Bug Fixes
+
+- Use cache when reading DOM for color when highlighting is disabled ([b9ae0f54](https://github.com/atom-minimap/minimap/commit/b9ae0f54f571d025eaefdf99ce94bdc66ebc89c1), [#384](https://github.com/atom-minimap/minimap/issues/384))
+
 <a name="v4.13.2"></a>
 # v4.13.2 (2015-08-27)
 

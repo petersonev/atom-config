@@ -15,6 +15,7 @@ Currently supported grammars are:
   * C# Script <sup>[*](#asterisk)</sup>
   * Coffeescript
   * CoffeeScript (Literate) <sup>[^](#caret)</sup>
+  * Crystal
   * Cucumber (Gherkin) <sup>[*](#asterisk)</sup>
   * D <sup>[*](#asterisk)</sup>
   * DOT (Graphviz)
@@ -27,8 +28,10 @@ Currently supported grammars are:
   * Haskell
   * Java
   * Javascript
+  * [JavaScript for Automation](https://developer.apple.com/library/mac/releasenotes/InterapplicationCommunication/RN-JavaScriptForAutomation/Articles/Introduction.html) (JXA)
   * Julia
   * Kotlin
+  * LaTeX (via latexmk)
   * LilyPond
   * Lisp (via SBCL) <sup>[⍵](#omega)</sup>
   * Literate Haskell <sup>[*](#asterisk)</sup>
@@ -39,9 +42,12 @@ Currently supported grammars are:
   * MongoDB
   * [NCL](http://www.ncl.ucar.edu/)<sup>[#](#hash)</sup>
   * newLISP
+  * Nim (and NimScript)
+  * NSIS
   * Objective-C <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>
   * Objective-C++ <sup>[*](#asterisk)</sup><sup>[‡](#double-dagger)</sup>
   * OCaml <sup>[*](#asterisk)</sup>
+  * Pandoc Markdown <sup>[††](#two-daggers)</sup>
   * Perl
   * Perl 6
   * PHP
@@ -56,6 +62,7 @@ Currently supported grammars are:
   * Scala
   * Swift
   * TypeScript
+  * Dart
 
 **NOTE**: Some grammars may require you to install [a custom language package](https://atom.io/search?utf8=✓&q=language).
 
@@ -75,6 +82,8 @@ You only have to add a few lines in a PR to support another.
 
 <a name="hash"></a><sup>#</sup> NCL scripts must end with `exit` command for file based runs
 
+<a name="two-daggers"></a><sup>††</sup> Requires the panzer pandoc wrapper https://github.com/msprev/panzer and the pandoc-flavored-markdown language package in Atom https://atom.io/packages/language-pfm
+
 ## Installation
 
 `apm install script`
@@ -85,7 +94,13 @@ Search for `script` within package search in the Settings View.
 
 ## Atom can't find node | ruby | python | my socks
 
-Make sure to launch Atom from the console/terminal. This gives atom all your useful environment variables.
+Make sure to launch Atom from the console/terminal. This gives atom all your useful environment variables. Additionally, make sure to run it with the project path you need. For example, use
+
+```
+atom .
+```
+
+to get it to run with the *current* directory as the default place to run scripts from.
 
 If you *really* wish to open atom from a launcher/icon, see [this issue for a variety of workarounds that have been suggested](https://github.com/rgbkrk/atom-script/issues/61#issuecomment-37337827).
 

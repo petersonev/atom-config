@@ -4,14 +4,45 @@
   welcome:
     showOnStartup: false
   editor:
-    fontSize: 13
     invisibles: {}
     showIndentGuide: true
+    showInvisibles: true
+    fontSize: 13
   core:
     excludeVcsIgnoredPaths: false
+    packagesWithKeymapsDisabled: [
+      "editor-stats"
+      "git-control"
+      "git-plus"
+      "build"
+      "latex"
+      "platomformio"
+      "script"
+    ]
+    disabledPackages: [
+      "command-toolbar"
+      "flex-tool-bar"
+      "tool-bar"
+      "linter-gcc"
+      "whitespace"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.o"
+    ]
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
+    ]
   "one-dark-ui": {}
   platomformio:
     environPath: "/opt/theos/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:"
+    verboseUpload: false
   build: {}
   "run-command2": {}
   "env-from-shell":
@@ -24,6 +55,7 @@
   script: {}
   "fuzzy-finder": {}
   "tree-view":
+    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   "git-plus": {}
   "editor-settings": {}
@@ -49,4 +81,69 @@
         green: 76
         blue: 56
         alpha: 1
-  latex: {}
+  latex:
+    alwaysOpenResultInAtom: true
+  "flex-tool-bar": {}
+  "tool-bar":
+    position: "Right"
+    iconSize: "16px"
+  "command-toolbar": {}
+  tabs:
+    usePreviewTabs: true
+    alwaysShowTabBar: false
+  "status-bar": {}
+  "ctags-status": {}
+  "status-bar-clock":
+    activateOnStart: "Show on start"
+  linter:
+    errorPanelHeight: 67
+    showErrorPanel: false
+  "linter-shellcheck":
+    enableNotice: true
+  "linter-clang":
+    clangSuppressWarnings: true
+    clangIncludePaths: [
+      "."
+      "/Users/petersonev/.atom/C++_Headers"
+    ]
+  "linter-javac": {}
+  Zen:
+    fullscreen: false
+    tabs: "multiple"
+  "remote-edit": {}
+  "Remote-FTP":
+    hideLocalWhenDisplayed: true
+  "autocomplete-plus":
+    maxVisibleSuggestions: 5
+    confirmCompletion: "tab"
+  "atom-material-ui":
+    compactTreeView: true
+    showTabIcons: "Show on all tabs"
+    tabSize: "Small"
+    rippleAccentColor: true
+  "isotope-ui":
+    minimalMode: true
+  "highlight-selected":
+    lightTheme: true
+    hideHighlightOnSelectedWord: true
+  whitespace:
+    ensureSingleTrailingNewline: false
+  "linter-gcc":
+    gccIncludePaths: ".,./.pioenvs/lpc1768/FrameworkMbedInc1648309630, ./.pioenvs/lpc1768/FrameworkMbedInc-250686161, ./.pioenvs/lpc1768/FrameworkMbedInc-550770547,./.pioenvs/lpc1768/FrameworkMbedInc549023428"
+  "autocomplete-clang":
+    includePaths: [
+      "."
+      "/Users/petersonev/.atom/C++_Headers"
+    ]
+    "std c": "c11"
+  "autohide-tree-view":
+    animationSpeed: 3
+    maxWidth: 400
+    hoverAreaSize: 10
+    showOn: "hover"
+  deprecated:
+    tool:
+      make: true
+".text.todo":
+  editor:
+    showInvisibles: false

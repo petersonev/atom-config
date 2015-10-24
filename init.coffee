@@ -20,18 +20,92 @@
 #     cursor.setScreenPosition(originalPosition)
 #   else
 #     editor.copySelectedText()
+
+# process.env.PATH = ["/opt/theos/bin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/tmp/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"]
+# process.env.THEOS = ["/opt/theos"]
+
+# process.env["test"] = "a"
+
 path = require 'path'
 fs = require 'fs'
 
 
+process.env.PATH = ["/Library/Frameworks/Python.framework/Versions/2.7/bin",process.env.PATH].join(":")
+process.env.PATH = ["/opt/local/bin:/opt/local/sbin",process.env.PATH].join(":")
 
-projectPath = atom.project.getPaths()
+process.env.THEOS = "/opt/theos"
+process.env.PATH = ["#{process.env.THEOS}/bin",process.env.PATH].join(":")
+
+process.env.THEOS_DEVICE_IP = "iPhone-6.local"
+process.env.THEOS_DEVICE_PORT = 22
+
+
+# {SelectListView,View} = require 'atom'
+# {$, View} = require './space-pen-extensions'
+
+
+
+# module.exports =
+# class MySelectListView extends View
+#   initialize: () ->
+#     super
+#     @addClass('overlay from-top')
+#     @setItems(['Hello', 'World'])
+#     atom.workspaceView.append(this)
+#     @focusFilterEditor()
+#
+#   viewForItem: (item) ->
+#     "<li>#{item}</li>"
+
+  # confirmed: (item) ->
+  #   console.log("#{item} was selected")
+
+
+
+# config = [process.env.HOME,".bash_profile"].join("/")
+#
+# out = fs.readFileSync config, 'utf8'
+# # out_2 = out.split("\n")
+#
+# for i in out.split("\n")
+#   if (i.indexOf "export",0) == 0
+#     trim = (i.replace /^\s+/g, "").split("=")
+#     name = trim[0]
+#     val =  trim.slice(1,trim.length).join("=")
+#     if name == "PATH"
+#       process.env.PATH = [val,process.env.PATH].join(":")
+#
+#     # console.log [trim[0], trim.slice(1,trim.length).join("=")]
+#
+# console.log out.split("\n")
+
+# {$} = require 'atom'
+#
+# cpb = $('<a href="">Start</a>').css
+#   'position': 'absolute'
+#   'float': 'left'
+#   'right': 3
+#   'height': 34
+#   'line-height': '32px'
+#   'overflow': 'hidden'
+#
+# cpb.on 'click', ->
+#   atom.workspaceView.trigger 'command-palette:toggle'
+
+# $('.panes').append cpb
+
+# view = document.createElement('my-find')
+# @panel = atom.workspace.addBottomPanel item: view
+
+
 
 buildfileExists = true
 platformIOExists = true
 makefileExists = true
 
 checkbuild = ->
+  projectPath = atom.project.getPaths()
+
   buildfileExists = true
   platformIOExists = true
   makefileExists = true
@@ -80,6 +154,9 @@ atom.commands.add 'atom-workspace',
     if type == "md"
       try
         atom.commands.dispatch(editorElement, 'markdown-preview:toggle')
+    else if type == "tex"
+      try
+        atom.commands.dispatch(editorElement, 'latex:build')
     else if buildfileExists
       try
         atom.commands.dispatch(editorElement, 'build:trigger')
@@ -95,8 +172,12 @@ atom.commands.add 'atom-workspace',
 
   'custom:extra-build-command': ->
     checkbuild()
+    type = getFileType()
     editorElement = atom.views.getView(atom.workspace.getActiveTextEditor())
-    if buildfileExists
+    if type == "tex"
+      try
+        atom.commands.dispatch(editorElement, 'latex:clean')
+    else if buildfileExists
       try
         atom.commands.dispatch(editorElement, 'build:select-active-target')
     else if makefileExists
